@@ -1,0 +1,31 @@
+{
+  "name": "spedata-atelier-oblog-mathieunoel",
+  "version": "1.0.0",
+  "description": "Il est temps pour vous de mettre en pratique toutes les bonnes pratiques et les outils que l'on a découvert en ce début de Spé API & Data.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {    
+    "dev": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-Daguerre/spedata-atelier-oblog-MathieuNoel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-Daguerre/spedata-atelier-oblog-MathieuNoel/issues"
+  },
+  "homepage": "https://github.com/O-clock-Daguerre/spedata-atelier-oblog-MathieuNoel#readme",
+  "dependencies": {
+    "bunyan": "^1.8.15",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-jsdoc-swagger": "^1.7.0",
+    "joi": "^17.6.0",
+    "pg": "^8.7.3"
+  }
+}

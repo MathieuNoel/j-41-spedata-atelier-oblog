@@ -1,0 +1,5 @@
+%syntax-version=1.0.0
+%project=oblog
+
+initiliation 2022-07-18T07:27:10Z mathieu <aluminox@gmx.fr> # creation de la BDD et de ses contraintes
+data 2022-07-18T09:24:27Z mathieu <aluminox@gmx.fr> # ajout des données dans la BDD
