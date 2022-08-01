@@ -1,0 +1,12 @@
+"Une categorie"
+type Category{
+    id: Int!,
+    route: String!,
+    label: String!,
+    posts: [Post!]!
+}
+
+input CreateCategoryInput{
+    route: String!,
+    label: String!,
+}

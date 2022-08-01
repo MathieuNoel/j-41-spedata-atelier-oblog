@@ -1,0 +1,16 @@
+"Un poste"
+type Post{
+    id: Int ,
+    slug: String!, 
+    title: String!,
+    excerpt: String!,
+    content: String!,
+    category: Category!
+}
+
+input CreatePostInput{
+    slug: String!,
+    title: String!,
+    excerpt: String!,
+    content: String!
+}

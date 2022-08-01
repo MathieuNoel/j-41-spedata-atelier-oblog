@@ -2,12 +2,21 @@ require('dotenv').config();
 
 const {createServer} = require('http');
 
-const app = require('./app');
+const { ApolloServer } = require('apollo-server-express');
 
-const port = process.env.PORT || 5050;
+const debug =require('debug')('server');
 
-const server = createServer(app);
+const { app, apolloConfig } = require('./app');
 
-server.listen(port, () => {
-  console.log(`http://localhost:${port}`);
-});
+const PORT = process.env.PORT || 5050;
+
+const httpServer = createServer(app);
+
+const apolloServer = new ApolloServer(apolloConfig);
+
+(async () => {
+  await apolloServer.start();
+  apolloServer.applyMiddleware({ app });
+  await httpServer.listen(PORT);
+  debug(`Server ready at http://localhost:${PORT}${apolloServer.graphqlPath}`);
+})();

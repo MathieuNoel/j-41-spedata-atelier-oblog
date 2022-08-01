@@ -1,0 +1,6 @@
+type Mutation{
+    
+    createPost(input: CreatePostInput!): Post
+
+    createCategory(input: CreateCategoryInput!): Category
+}

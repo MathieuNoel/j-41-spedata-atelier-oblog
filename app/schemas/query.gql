@@ -1,0 +1,7 @@
+"récupération de toutes les selections"
+type Query {
+    posts: [Post]
+    post(id: Int!): Post
+    categories: [Category]
+    category(id: Int!): Category
+}

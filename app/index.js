@@ -1,35 +1,46 @@
 const express = require('express');
 
-const apidocs = require('./helpers/apidocs');
+// const apidocs = require('./helpers/apidocs');
 
-const errorHandler = require('./helpers/errorHandler');
+// const errorHandler = require('./helpers/errorHandler');
 
-const ApiError = require('./errors/apiError');
+// const ApiError = require('./errors/apiError');
 
-const logger = require('./helpers/logger');
+// const logger = require('./helpers/logger');
 
-process.on('uncaughtException', () => {
-  logger.info('erreur non catché');
-});
+// process.on('uncaughtException', () => {
+//   logger.info('erreur non catché');
+// });
 
-process.on('unhandledRejection', () => {
-  logger.info('erreur non catché');
-});
+// process.on('unhandledRejection', () => {
+//   logger.info('erreur non catché');
+// });
 
-const router = require('./routers');
+// const router = require('./routers');
 
 const app = express();
 
-app.use(express.json());
+const typeDefs = require('./schemas');
 
-apidocs(app);
+const resolvers = require('./resolvers');
 
-app.use(router);
+module.exports = { 
+  app,
+  apolloConfig: {
+    typeDefs,
+    resolvers,
+  },
+ }
+// app.use(express.json());
 
-app.use((req, res, next) => {
-  next(new ApiError('endpoint not found', { statusCode: 404 }))
-});
+// apidocs(app);
 
-app.use(errorHandler);
+// app.use(router);
 
-module.exports = app;
+// app.use((req, res, next) => {
+//   next(new ApiError('endpoint not found', { statusCode: 404 }))
+// });
+
+// app.use(errorHandler);
+
+// module.exports = app;
